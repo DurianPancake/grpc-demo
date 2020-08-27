@@ -62,5 +62,7 @@
     </build>
     <modules>
         <module>grpc-common</module>
+        <module>grpc-client</module>
+
     </modules>
 </project>
