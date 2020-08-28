@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "cn.durian.grpc.proto";
+//  输出类主文件(此配置可选)
+option java_outer_classname = "HelloWorldProto";
+
+//定义一个服务
+service MultiStreamService{
+  rpc queryStream (stream MessageRequest) returns (stream MessageResponse) {
+  }
+}
+
+//定义一个请求体(用于传参)
+message MessageRequest{
+  string id=1;
+  uint64 time=2;
+  bytes data=3;
+}
+
+//定义一个响应体(用于回参)
+message MessageResponse{
+  string id=1;
+  bytes data=2;
+  uint64 time=3;
+}
